@@ -104,7 +104,9 @@ const showMenu = () => {
         isScrollingOn = true;
         header.classList.remove("hidden");
 
-        setTimeout(autoHideMenu, 1000);
+        setTimeout(() => {
+            header.classList.add("hidden");
+        }, 1000);
     }
 };
 
@@ -131,6 +133,3 @@ navBar.addEventListener("click", scrollToClickedMenuItem);
 
 // Set sections as active
 document.addEventListener("scroll", activateMenuForMostVisibleSection);
-
-// Set navbar visible when scrolling
-document.addEventListener("scroll", showMenu);
